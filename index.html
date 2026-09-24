@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vianoro Joyería</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background: #11100f;
+            color: white;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #c9a24d;
+        }
+
+        .logo {
+            font-size: 32px;
+            color: #c9a24d;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 15px;
+        }
+
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-contenido {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #c9a24d;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .boton {
+            display: inline-block;
+            background: #c9a24d;
+            color: #11100f;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .seccion {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .seccion h2 {
+            color: #c9a24d;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .producto {
+            background: #1d1b19;
+            padding: 25px;
+            border: 1px solid #3b3324;
+            border-radius: 15px;
+        }
+
+        .producto h3 {
+            color: #c9a24d;
+            margin-bottom: 10px;
+        }
+
+        .producto p {
+            color: #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #3b3324;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">VIANORO</div>
+
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#coleccion">Joyería</a>
+            <a href="#">Contacto</a>
+            <a href="#">🛒 Carrito</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-contenido">
+
+            <h1>Vianoro Joyería</h1>
+
+            <p>
+                Detalles que cuentan tu historia.
+            </p>
+
+            <a href="#coleccion" class="boton">
+                Ver colección
+            </a>
+
+        </div>
+    </section>
+
+    <section class="seccion" id="coleccion">
+
+        <h2>Productos destacados</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+                <h3>Pulsera Vianoro</h3>
+                <p>Producto próximamente disponible</p>
+            </div>
+
+            <div class="producto">
+                <h3>Nueva colección</h3>
+                <p>Estamos preparando algo especial.</p>
+            </div>
+
+            <div class="producto">
+                <h3>Diseños exclusivos</h3>
+                <p>Detalles creados para ti.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Vianoro Joyería</p>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
