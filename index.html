@@ -428,6 +428,87 @@
         <p>© 2026 Vianoro Joyería</p>
         <p>Todos los derechos reservados.</p>
     </footer>
+<script>
+let carrito = [];
 
+function agregarAlCarrito(nombre, precio) {
+    carrito.push({
+        nombre: nombre,
+        precio: precio
+    });
+
+    actualizarCarrito();
+
+    document.getElementById("carrito").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function actualizarCarrito() {
+    const lista = document.getElementById("lista-carrito");
+    const total = document.getElementById("total-carrito");
+
+    lista.innerHTML = "";
+
+    if (carrito.length === 0) {
+        lista.innerHTML = "<p>No hay productos en el carrito.</p>";
+        total.textContent = "Total: $0";
+        return;
+    }
+
+    let totalCompra = 0;
+
+    carrito.forEach((producto, indice) => {
+        totalCompra += producto.precio;
+
+        const item = document.createElement("div");
+        item.className = "item-carrito";
+
+        item.innerHTML = `
+            <p>${producto.nombre}</p>
+            <p>$${producto.precio.toLocaleString("es-CO")}</p>
+            <button onclick="eliminarDelCarrito(${indice})">
+                Eliminar
+            </button>
+        `;
+
+        lista.appendChild(item);
+    });
+
+    total.textContent =
+        "Total: $" + totalCompra.toLocaleString("es-CO");
+}
+
+function eliminarDelCarrito(indice) {
+    carrito.splice(indice, 1);
+    actualizarCarrito();
+}
+
+document.getElementById("finalizar-compra").addEventListener("click", function () {
+
+    if (carrito.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+    }
+
+    let mensaje = "Hola VIANORO, quiero realizar este pedido:%0A%0A";
+    let totalCompra = 0;
+
+    carrito.forEach((producto) => {
+        mensaje += "• " + producto.nombre + " - $" +
+            producto.precio.toLocaleString("es-CO") + "%0A";
+
+        totalCompra += producto.precio;
+    });
+
+    mensaje += "%0ATotal: $" +
+        totalCompra.toLocaleString("es-CO");
+
+    window.open(
+        "https://wa.me/573180062021?text=" + mensaje,
+        "_blank"
+    );
+});
+</script>
 </body>
 </html>
